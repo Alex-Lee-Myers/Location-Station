@@ -1,35 +1,61 @@
 import './App.css';
-import React from 'react';
-import Reactstrap from 'reactstrap';
+import React, { useState } from 'react';
+import {Container, Col, Row} from 'reactstrap';
 import OpenWeather from './components/OpenWeather';
-import Ticketmaster from './components/Ticketmaster';
+import Ticket from './components/Ticketmaster';
 import Nasa from './components/Nasa';
 
 function App() {
-  // function showLocation to grab and store a location from the user
-  function showLocation(position) {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-    const mapLink = `https://www.google.com/maps/search/${latitude},${longitude}`;
-    console.log(mapLink);
-    console.log(latitude)
-    console.log(longitude)
-  }
-
-  // function showError to display an error message
-  function showError(error) {
-    console.warn(error.message);
-  }
-
-  // function getLocation to call the showLocation function and the showError function
-  function getLocation() {
-    navigator.geolocation.getCurrentPosition(showLocation, showError);
+  {/* When opening the page, it grabs the users location and shows results from API's that are in components. */}
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
+  
+  const getLocation = (event) => {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition((position) => {
+      setLatitude(position.coords.latitude);
+      setLongitude(position.coords.longitude);
+    });
   }
 
   return (
-    <div className="App">
-      <button onClick={getLocation}>Get Location</button>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <h1>Welcome to the Weather App</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <button onClick={getLocation}>Get Location</button>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <p>Latitude: {latitude}</p>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <p>Longitude: {longitude}</p>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <OpenWeather latitude={latitude} longitude={longitude}/>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Ticket latitude={latitude} longitude={longitude}/>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Nasa latitude={latitude} longitude={longitude}/>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
