@@ -4,6 +4,7 @@ import Reactstrap from 'reactstrap';
 import OpenWeather from './components/OpenWeather';
 import Ticket from './components/Ticketmaster';
 import Nasa from './components/Nasa';
+import Header from './components/Header';
 
 function App() {
   // function showLocation to grab and store a location from the user
@@ -28,7 +29,9 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={getLocation}>Get Location</button>
+      <Header />
+      
+      <button className='btnSize1' onClick={getLocation}>Get Location</button>
       <Ticket />
     </div>
   );

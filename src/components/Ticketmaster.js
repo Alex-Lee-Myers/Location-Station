@@ -28,7 +28,7 @@ const Ticket = () => {
         <Container className='nasa'>
             <Row>
                 <Col md='6'>
-                    <Button className='btnSize' outline color='info' onClick={ticketMaster}>Nearby Events</Button>
+                    <Button className='btnSize' color='primary' onClick={ticketMaster}>Nearby Events</Button>
                     <ul>
                         <li className='item'>{info}</li>
                         <li className='item'>{info2}</li>
