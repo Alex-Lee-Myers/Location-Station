@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {Container, Col, Row} from 'reactstrap';
 import OpenWeather from './components/OpenWeather';
 import Ticket from './components/Ticketmaster';
-import Nasa from './components/Nasa';
+//import Nasa from './components/Nasa';
 import Header from './components/Header';
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
     <><Container>
       <Row>
         <Col>
+        <Header />
           <h1>Welcome to the Weather App</h1>
         </Col>
       </Row>
@@ -53,11 +54,11 @@ function App() {
       </Row>
       <Row>
         <Col>
-          <Nasa latitude={latitude} longitude={longitude} />
+          {/*<Nasa latitude={latitude} longitude={longitude} />*/}
         </Col>
       </Row>
     </Container><div className="App">
-        <Header />
+        
 
         <button className='btnSize1' onClick={getLocation}>Get Location</button>
         <Ticket />

@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { Row } from 'reactstrap';
-import { owAPIKey } from '../environment';
 
 const OpenWeather = (props) => {
     const [currentWeather, setCurrentWeather] = useState({ temp: 0,icon: '',description: ''});
     const getCurrentWeather = async () => {
-        const apiKey = apiKey;
-        const owAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${props.latitude}&lon=${props.longitude}&appid=${apiKey}`
+        const owAPIKey = '2de6705d788ff0ce77cd693b4a3cf03d';
+        const owAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${props.latitude}&lon=${props.longitude}&appid=${owAPIKey}`
         await fetch(owAPI)
             .then((res) => {
                 const response = res.json();
