@@ -13,7 +13,6 @@ const Header = () => {
                 <NavLink className='link' href='https://github.com/Alex-Lee-Myers/teamGit'>
                     Github
                 </NavLink>
-          
         </Navbar>
     </header>
     );
