@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Container, Row, Col, Button } from 'reactstrap'
 
-const Ticket = () => {
+const Ticket = (props) => {
     const [info, setInfo] = useState("");
     const [info2, setInfo2] = useState("");
     const [info3, setInfo3] = useState("");
@@ -9,10 +9,8 @@ const Ticket = () => {
     const [info5, setInfo5] = useState("");
 
     let ticketMaster = () => {
-        //const latitude = position.coords.latitude;
-        //const longitude = position.coords.longitude;
         fetch(
-            `https://app.ticketmaster.com/discovery/v2/events.json?&countryCode=US&apikey=mLcjBvp47aw1ldczDmzEw7AwDtfRWYAs&latlong=39.666385,86.202591`
+            `https://app.ticketmaster.com/discovery/v2/events.json?&countryCode=US&apikey=mLcjBvp47aw1ldczDmzEw7AwDtfRWYAs&latlong=${props.latitude},${props.longitude}`
         )
         .then((res) => res.json())
         .then((data) => {
