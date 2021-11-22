@@ -57,6 +57,12 @@ function App() {
         </Col>
       </Row>
     </Container>
+    <div className="App">
+      <Header />
+      
+      <button className='btnSize1' onClick={getLocation}>Get Location</button>
+      <Ticket />
+    </div>
   );
 }
 
