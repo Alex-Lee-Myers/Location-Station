@@ -5,7 +5,7 @@ import { owAPIKey } from '../environment';
 const OpenWeather = (props) => {
     const [currentWeather, setCurrentWeather] = useState({ temp: 0,icon: '',description: ''});
     const getCurrentWeather = async () => {
-        const apiKey = owAPIKey;
+        const apiKey = apiKey;
         const owAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${props.latitude}&lon=${props.longitude}&appid=${apiKey}`
         await fetch(owAPI)
             .then((res) => {

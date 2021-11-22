@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <Container>
+    <><Container>
       <Row>
         <Col>
           <h1>Welcome to the Weather App</h1>
@@ -43,26 +43,25 @@ function App() {
       </Row>
       <Row>
         <Col>
-          <OpenWeather latitude={latitude} longitude={longitude}/>
+          <OpenWeather latitude={latitude} longitude={longitude} />
         </Col>
       </Row>
       <Row>
         <Col>
-          <Ticket latitude={latitude} longitude={longitude}/>
+          <Ticket latitude={latitude} longitude={longitude} />
         </Col>
       </Row>
       <Row>
         <Col>
-          <Nasa latitude={latitude} longitude={longitude}/>
+          <Nasa latitude={latitude} longitude={longitude} />
         </Col>
       </Row>
-    </Container>
-    <div className="App">
-      <Header />
-      
-      <button className='btnSize1' onClick={getLocation}>Get Location</button>
-      <Ticket />
-    </div>
+    </Container><div className="App">
+        <Header />
+
+        <button className='btnSize1' onClick={getLocation}>Get Location</button>
+        <Ticket />
+      </div></>
   );
 }
 
