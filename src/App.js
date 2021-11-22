@@ -4,6 +4,7 @@ import {Container, Col, Row} from 'reactstrap';
 import OpenWeather from './components/OpenWeather';
 import Ticket from './components/Ticketmaster';
 import Nasa from './components/Nasa';
+import Header from './components/Header';
 
 function App() {
   {/* When opening the page, it grabs the users location and shows results from API's that are in components. */}
@@ -56,6 +57,12 @@ function App() {
         </Col>
       </Row>
     </Container>
+    <div className="App">
+      <Header />
+      
+      <button className='btnSize1' onClick={getLocation}>Get Location</button>
+      <Ticket />
+    </div>
   );
 }
 
