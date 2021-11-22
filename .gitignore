@@ -12,9 +12,6 @@
 /build
 
 # misc
-/node_modules
-/package-lock.json
-environment.js
 .DS_Store
 .env.local
 .env.development.local
