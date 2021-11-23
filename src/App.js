@@ -16,7 +16,7 @@ import {
   MDBCardBody,
   MDBCardTitle,
   MDBCardText,
-  MDBCardGroup
+  MDBCardGroup,
 } from "mdb-react-ui-kit";
 
 function App() {
@@ -36,84 +36,100 @@ function App() {
 
   if (latitude !== "" && longitude !== "") {
     return (
-      <MDBContainer>
-      <br />
-      {/* MDB background image that covers whole page and keeps it scrollable */}
-      <div
-      className="text-center bg-image"
-      style={{
-        backgroundImage:
-          "url('https://i.giphy.com/media/VI2UC13hwWin1MIfmi/giphy.gif')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        height: "100vh",
-        width: "100vw",
-        position: "absolute",
-        top: "0",
-        left: "0",
-        zIndex: "-1",
-      }}
-    >
-      <div
-        className="mask hover-overlay"
-        style={{ 
-          backgroundColor: "rgba(0, 0, 0, 0.2)",
-          height: "100vh",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "100% 100% ",
-         }}
-      >
-      <br />
-      <Header latitude={latitude} longitude={longitude}/>
+      <MDBContainer className="App">
+        <div className="d-flex">
         <br />
+        {/* MDB background image that covers whole page and keeps it scrollable */}
+        <div
+          className="image"
+          style={{
+            backgroundImage:
+              "url('https://i.giphy.com/media/VI2UC13hwWin1MIfmi/giphy.gif')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            height: "100%",
+            width: "100vw",
+            position: "absolute",
+            top: "0",
+            left: "0",
+            zIndex: "-1",
+          }}
+        >
+          <div
+            className="mask"
+            style={{
+              backgroundColor: "rgba(0, 0, 0, 0.9)"
+            }}
+          >
+            <br />
+            <Header latitude={latitude} longitude={longitude} />
+            <br />
+            
+            <MDBRow>
+              <MDBCol size="2">
+              </MDBCol>
+              <MDBCol size="8">
+              <div className='d-flex justify-content-center align-items-stretch'>
+            <MDBCardGroup className="overflow-auto" width="99%" height="auto">
 
-        <MDBCardGroup>
-            <MDBCard>
-              <MDBCardHeader className="text-center">
-                <h3>Weather</h3>
-              </MDBCardHeader>
-              <MDBCardBody>
-              <p className="text-center"> Check your local weather here. </p>
-                <MDBCardTitle className="text-center">
-                </MDBCardTitle>
-                <OpenWeather latitude={latitude} longitude={longitude} />
-              </MDBCardBody>
-            </MDBCard>
-          
+              <MDBCard>
+                <MDBCardHeader className="text-center">
+                  <h3>Weather</h3>
+                </MDBCardHeader>
+                <MDBCardBody>
+                  <p className="text-center"> Check your local weather here. </p>
+                  <MDBCardTitle className="text-center">
+                  </MDBCardTitle>
+                  <OpenWeather latitude={latitude} longitude={longitude} />
+                </MDBCardBody>
+              </MDBCard>
 
-          
-            <MDBCard>
-              <MDBCardHeader className="text-center">
-                <h3>Events Nearby</h3>
-              </MDBCardHeader>
-              <MDBCardBody>
-              <p className="text-center"> View upcoming local events in your area. </p>
-                <MDBCardTitle className="text-center">
-                  <Ticket latitude={latitude} longitude={longitude} />
-                </MDBCardTitle>
-              </MDBCardBody>
-            </MDBCard>
-            <MDBCard>
-              <MDBCardHeader className="text-center">
-                <h3>Sky View</h3>
-              </MDBCardHeader>
-              <MDBCardBody>
-              <p className="text-center"> A satellite image of your location is available here. </p>
-                <MDBCardTitle className="text-center">
-                  <Nasa latitude={latitude} longitude={longitude} />
-                </MDBCardTitle>
-              </MDBCardBody>
-            </MDBCard>
-        </MDBCardGroup>
 
-        <MDBRow>
-          <MDBCol>
-            <Footer />
-          </MDBCol>
-        </MDBRow>
-      </div>
-    </div>
+
+              <MDBCard>
+                <MDBCardHeader className="text-center">
+                  <h3>Events Nearby</h3>
+                </MDBCardHeader>
+                <MDBCardBody>
+                  <p className="text-center"> View upcoming local events in your area. </p>
+                  <MDBCardTitle className="text-center">
+                    <Ticket latitude={latitude} longitude={longitude} />
+                  </MDBCardTitle>
+                </MDBCardBody>
+              </MDBCard>
+
+
+
+              <MDBCard>
+                <MDBCardHeader className="text-center">
+                  <h3>Sky View</h3>
+                </MDBCardHeader>
+                <MDBCardBody>
+                  <p className="text-center"> A satellite image of your location is available here. </p>
+                  <MDBCardTitle className="text-center">
+                    <Nasa latitude={latitude} longitude={longitude} />
+                  </MDBCardTitle>
+                </MDBCardBody>
+              </MDBCard>
+
+            </MDBCardGroup>
+            </div>
+            </MDBCol>
+            <MDBCol size="2">
+            </MDBCol>
+
+            </MDBRow>
+            
+
+            <MDBRow>
+              <MDBCol>
+                <Footer />
+              </MDBCol>
+            </MDBRow>
+          </div>
+        </div>
+        </div>
       </MDBContainer>
     );
   } else {
@@ -137,12 +153,12 @@ function App() {
         >
           <div
             className="mask hover-overlay"
-            style={{ 
+            style={{
               backgroundColor: "rgba(0, 0, 0, 0.2)",
               height: "100vh",
               backgroundRepeat: "no-repeat",
               backgroundSize: "100% 100% ",
-             }}
+            }}
           >
             <div className="d-flex justify-content-center align-items-center h-100">
               <div className="text-white">
