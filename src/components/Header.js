@@ -8,12 +8,8 @@ const Header = () => {
     return(
     <header>
         <Navbar className='header'>
-        <h1>72 Hour Project</h1> 
-        
-                <NavLink className='link' href='https://github.com/Alex-Lee-Myers/teamGit'>
-                    Github
-                </NavLink>
-          
+        <h1>72 Hour Project: Weather App</h1> 
+
         </Navbar>
     </header>
     );
