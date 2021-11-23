@@ -15,40 +15,42 @@ const Nasa = (props) => {
     // fetch from NASA API and set data after hitting button in return
     useEffect(() => {
         if (latitude === "") {
-          const getLat = (pos) => setLatitude(pos.coords.latitude);
-          const latitude = navigator.geolocation.getCurrentPosition(getLat);
+            const getLat = (pos) => setLatitude(pos.coords.latitude);
+            const latitude = navigator.geolocation.getCurrentPosition(getLat);
         }
         if (longitude === "") {
-          const getLng = (pos) => setLongitude(pos.coords.longitude);
-          const longitude = navigator.geolocation.getCurrentPosition(getLng);
+            const getLng = (pos) => setLongitude(pos.coords.longitude);
+            const longitude = navigator.geolocation.getCurrentPosition(getLng);
         }
-      }, [latitude, longitude]);
-    
-      const fetchResults = () => {
+    }, [latitude, longitude]);
+
+    const fetchResults = () => {
         fetch(url)
-          .then((res) => res)
-          .then((res) => {
-            console.log(res);
-            setData(res.url);
-          })
-    
-          .catch((err) => console.log(err));
-      };
-    
-      useEffect(async () => {
+            .then((res) => res)
+            .then((res) => {
+                console.log(res);
+                setData(res.url);
+            })
+
+            .catch((err) => console.log(err));
+    };
+
+    useEffect(async () => {
         if (latitude !== "" && longitude !== "") {
-          await fetchResults();
+            await fetchResults();
         }
-        }, [data, latitude, longitude]);
+    }, [data, latitude, longitude]);
 
     return (
-        <MDBContainer className = "nasa-container">
+        <MDBContainer className="nasa-container">
             <MDBRow>
+                <div className='hover-zoom'>
                 <MDBCardImage
                     className="img-fluid"
                     src={data}
                     waves
                 />
+                </div>
             </MDBRow>
         </MDBContainer>
     )
