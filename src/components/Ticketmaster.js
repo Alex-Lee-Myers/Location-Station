@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Container, Row, Col, Button } from 'reactstrap'
+import { MDBContainer, MDBBtn, MDBRow, MDBCol, MDBListGroup, MDBListGroupItem, MDBCollapse } from 'mdb-react-ui-kit';
 
 const Ticket = (props) => {
     const [info, setInfo] = useState("");
@@ -22,21 +22,33 @@ const Ticket = (props) => {
         });
     };
 
+    const [showShow, setShowShow] = useState(false);
+    const toggleShow = () => setShowShow(!showShow);
+
     return (
-        <Container className='nasa'>
-            <Row>
-                <Col md='6'>
-                    <Button className='btnSize' color='primary' onClick={ticketMaster}>Nearby Events</Button>
-                    <ul>
-                        <li className='item'>{info}</li>
-                        <li className='item'>{info2}</li>
-                        <li className='item'>{info3}</li>
-                        <li className='item'>{info4}</li>
-                        <li className='item'>{info5}</li>
-                    </ul>
-                </Col>
-            </Row>
-        </Container>
+        <MDBContainer className='nasa'>
+            <MDBRow className="text-center">
+                <MDBCol md='12'>
+                    <MDBBtn className='btnSize' color='primary' onClick={(e) => {ticketMaster(); toggleShow();}}>Nearby Events</MDBBtn>
+                    <MDBListGroup style={{ 
+                        minWidth: '16rem',
+                        maxWidth: '16rem',
+                        margin: 'auto',
+                        textAlign: 'center'
+                 }}>
+                    <MDBCollapse show={showShow}>
+                        <br />
+
+                        <MDBListGroupItem className='item'>{info}</MDBListGroupItem>
+                        <MDBListGroupItem className='item'>{info2}</MDBListGroupItem>
+                        <MDBListGroupItem className='item'>{info3}</MDBListGroupItem>
+                        <MDBListGroupItem className='item'>{info4}</MDBListGroupItem>
+                        <MDBListGroupItem className='item'>{info5}</MDBListGroupItem>
+                    </MDBCollapse>
+                    </MDBListGroup>
+                </MDBCol>
+            </MDBRow>
+        </MDBContainer>
     );
 }
 
