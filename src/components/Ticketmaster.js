@@ -35,16 +35,17 @@ const Ticket = (props) => {
             <MDBRow>
                 <MDBCol size='12'>
                 <MDBCollapse show={showShow}>
-                <MDBListGroup className='list-group-flush' style={{ 
+                <MDBListGroup className='list-group-flush' style={{
                     margin: 'auto',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    fontSize: '14px'
             }}>
                     <br />
-                        <MDBListGroupItem className='item'>{info}</MDBListGroupItem>
-                        <MDBListGroupItem className='item'>{info2}</MDBListGroupItem>
-                        <MDBListGroupItem className='item'>{info3}</MDBListGroupItem>
-                        <MDBListGroupItem className='item'>{info4}</MDBListGroupItem>
-                        <MDBListGroupItem className='item'>{info5}</MDBListGroupItem>
+                        <MDBListGroupItem className='item text-wrap'>{info}</MDBListGroupItem>
+                        <MDBListGroupItem className='item text-wrap'>{info2}</MDBListGroupItem>
+                        <MDBListGroupItem className='item text-wrap'>{info3}</MDBListGroupItem>
+                        <MDBListGroupItem className='item text-wrap'>{info4}</MDBListGroupItem>
+                        <MDBListGroupItem className='item text-wrap'>{info5}</MDBListGroupItem>
                 </MDBListGroup>
                 <br />
                 </MDBCollapse>

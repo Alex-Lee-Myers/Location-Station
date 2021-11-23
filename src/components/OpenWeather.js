@@ -104,6 +104,7 @@ return (
             maxWidth: "auto",
             margin: "auto",
             textAlign: "center",
+            fontSize: "14px",
         }}>
 
                 <MDBListGroupItem>

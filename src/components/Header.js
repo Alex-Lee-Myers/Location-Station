@@ -21,7 +21,16 @@ const Header = (props) => {
 
     return (
 
-        <MDBNavbar expand='lg' dark bgColor='Primary'>
+        <MDBNavbar 
+            expand='lg' 
+            dark bgColor='Primary'
+            className='header'
+            scrolling
+            transparent
+            style={{ 
+                marginTop: "65px"
+            }}
+            >
             <MDBContainer fluid>
                 <MDBNavbarToggler
                     type='button'
@@ -74,7 +83,5 @@ const Header = (props) => {
         </MDBNavbar>
     );
 }
-
-
 
 export default Header;
