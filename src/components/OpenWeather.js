@@ -21,6 +21,10 @@ const OpenWeather = (props) => {
             .catch(err => console.log(err));
     }
 
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     const [isFahrenheit, setIsFahrenheit] = useState(false);
     const toggleFahrenheit = () => {
         setIsFahrenheit(!isFahrenheit)
@@ -30,22 +34,40 @@ const OpenWeather = (props) => {
             }))
     }
 
-    // show weather and toggle between fahrenheit and celsius in return
+    // show toggleFahrenheight button only if getCurrentWeather has been called
+    let showToggleFahrenheit = false;
+    if (currentWeather.temp !== 0) {
+        showToggleFahrenheit = true;
+    }
+
     return (
+        <Row>
+            <h3>Current Weather</h3>
+            <button onClick={getCurrentWeather}>Get Weather</button>
+            {showToggleFahrenheit && <button className="btn btn-info" onClick={toggleFahrenheit}>{isFahrenheit ? 'Celsius' : 'Fahrenheit'}</button>}
+            
+            <img src={currentWeather.icon} alt={currentWeather.description} />
+            <p>Description: {capitalizeFirstLetter(currentWeather.description)}</p>
+            <p>{currentWeather.temp.toFixed(1)}°{isFahrenheit ? 'F' : 'C'}</p>
+        </Row>
+    )
+}
+
+{/*    return (
         <div>
             <Row>
                 <h3>Current Weather:</h3>
-                <button onClick={getCurrentWeather}>Get Weather</button>
+                
                 <h1>Temperature: {Math.round(currentWeather.temp)}°{isFahrenheit ? "F":"C"}</h1>
                 <button onClick={toggleFahrenheit}>Convert to {isFahrenheit ? "Celsius" : "Fahrenheit"}</button>
             </Row>
             <Row>
-                <p>Description: {currentWeather.description}</p>
+                
                 <p>Icon: <img src={currentWeather.icon}></img></p>
                 
             </Row>
         </div>
     )
-}
+}*/}
 
 export default OpenWeather;
