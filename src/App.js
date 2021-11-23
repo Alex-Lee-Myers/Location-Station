@@ -94,9 +94,6 @@ function App() {
                 </MDBCardTitle>
               </MDBCardBody>
             </MDBCard>
-          
-
-          
             <MDBCard>
               <MDBCardHeader className="text-center">
                 <h3>Sky View</h3>
@@ -108,7 +105,6 @@ function App() {
                 </MDBCardTitle>
               </MDBCardBody>
             </MDBCard>
-          
         </MDBCardGroup>
 
         <MDBRow>
@@ -121,7 +117,6 @@ function App() {
       </MDBContainer>
     );
   } else {
-
     return (
       <MDBContainer>
         <div
