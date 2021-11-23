@@ -57,7 +57,6 @@ let showToggleWeather = true;
 if (currentWeather.temp !== 0) {
     showToggleWeather = false;
 }
-
 const [showShow, setShowShow] = useState(false);
 const toggleShow = () => setShowShow(!showShow);
 
@@ -97,14 +96,14 @@ return (
     </MDBRow>
 
         <br />
-
+        <MDBCol size="12">
+        <MDBCollapse show={showShow}>
         <MDBListGroup style={{ 
-            minWidth: "16rem",
-            maxWidth: "16rem",
+            maxWidth: "auto",
             margin: "auto",
             textAlign: "center",
         }}>
-            <MDBCollapse show={showShow}>
+
                 <MDBListGroupItem>
                     <b>Description</b>:{" "}
                     {capitalizeFirstLetter(currentWeather.description)}
@@ -113,9 +112,10 @@ return (
                     <b>Temperature</b>: {currentWeather.temp.toFixed(1)}°
                     {isFahrenheit ? "F" : "C"}
                 </MDBListGroupItem>
+                <br />
+                </MDBListGroup>
             </MDBCollapse>
-        </MDBListGroup>
-
+        </MDBCol>
     </MDBContainer>
 );
 };

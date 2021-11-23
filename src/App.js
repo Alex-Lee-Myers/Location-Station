@@ -16,6 +16,7 @@ import {
   MDBCardBody,
   MDBCardTitle,
   MDBCardText,
+  MDBCardGroup
 } from "mdb-react-ui-kit";
 
 function App() {
@@ -36,32 +37,41 @@ function App() {
   if (latitude !== "" && longitude !== "") {
     return (
       <MDBContainer>
-        <MDBRow>
-          <h1 className="text-center p-3">Geographical Location</h1>
-          <MDBCol size="3">
-            <h3 className="latClass">Latitude: </h3>
-          </MDBCol>
-
-          <MDBCol size="3">
-            <h4 className="latCompClass">{latitude}</h4>
-          </MDBCol>
-
-          <MDBCol size="3">
-            <h3 className="lonClass">Longitude: </h3>
-          </MDBCol>
-
-          <MDBCol size="3">
-            <h4 className="lonCompClass">{longitude}</h4>
-          </MDBCol>
-        </MDBRow>
-
+      <br />
+      {/* MDB background image that covers whole page and keeps it scrollable */}
+      <div
+      className="text-center bg-image"
+      style={{
+        backgroundImage:
+          "url('https://i.giphy.com/media/VI2UC13hwWin1MIfmi/giphy.gif')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
+        width: "100vw",
+        position: "absolute",
+        top: "0",
+        left: "0",
+        zIndex: "-1",
+      }}
+    >
+      <div
+        className="mask hover-overlay"
+        style={{ 
+          backgroundColor: "rgba(0, 0, 0, 0.2)",
+          height: "100vh",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% 100% ",
+         }}
+      >
+      <br />
+      <Header latitude={latitude} longitude={longitude}/>
         <br />
 
-        <MDBRow>
-          <MDBCol size="4">
+        <MDBCardGroup>
             <MDBCard>
               <MDBCardHeader className="text-center">
-                <h3>OpenWeather API</h3>
+                <h3>Weather</h3>
               </MDBCardHeader>
               <MDBCardBody>
               <p className="text-center"> Check your local weather here. </p>
@@ -70,12 +80,12 @@ function App() {
                 <OpenWeather latitude={latitude} longitude={longitude} />
               </MDBCardBody>
             </MDBCard>
-          </MDBCol>
+          
 
-          <MDBCol size="4">
+          
             <MDBCard>
               <MDBCardHeader className="text-center">
-                <h3>TicketMaster API</h3>
+                <h3>Events Nearby</h3>
               </MDBCardHeader>
               <MDBCardBody>
               <p className="text-center"> View upcoming local events in your area. </p>
@@ -84,29 +94,26 @@ function App() {
                 </MDBCardTitle>
               </MDBCardBody>
             </MDBCard>
-          </MDBCol>
-
-          <MDBCol size="4">
             <MDBCard>
               <MDBCardHeader className="text-center">
-                <h3>NASA API</h3>
+                <h3>Sky View</h3>
               </MDBCardHeader>
               <MDBCardBody>
-              <p className="text-center"> A sattelite image of your location is available here. </p>
+              <p className="text-center"> A satellite image of your location is available here. </p>
                 <MDBCardTitle className="text-center">
                   <Nasa latitude={latitude} longitude={longitude} />
                 </MDBCardTitle>
               </MDBCardBody>
             </MDBCard>
-          </MDBCol>
-        </MDBRow>
+        </MDBCardGroup>
 
         <MDBRow>
           <MDBCol>
             <Footer />
           </MDBCol>
         </MDBRow>
-
+      </div>
+    </div>
       </MDBContainer>
     );
   } else {
@@ -117,14 +124,25 @@ function App() {
           style={{
             backgroundImage:
               "url('https://w.wallhaven.cc/full/2k/wallhaven-2kol9m.png')",
-            height: "100vh",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-            backgroundSize: "100% 100% ",
+            height: "100vh",
+            width: "100vw",
+            position: "absolute",
+            top: "0",
+            left: "0",
+            zIndex: "-1",
           }}
         >
           <div
-            className="mask"
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+            className="mask hover-overlay"
+            style={{ 
+              backgroundColor: "rgba(0, 0, 0, 0.2)",
+              height: "100vh",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "100% 100% ",
+             }}
           >
             <div className="d-flex justify-content-center align-items-center h-100">
               <div className="text-white">
