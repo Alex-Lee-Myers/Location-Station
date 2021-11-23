@@ -133,7 +133,6 @@ function App() {
       </MDBContainer>
     );
   } else {
-
     return (
       <MDBContainer>
         <div

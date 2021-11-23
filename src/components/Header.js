@@ -62,9 +62,6 @@ const Header = (props) => {
                         </MDBNavbarItem>
                     </MDBNavbarNav>
 
-
-
-
                     <MDBNavbarNav fullWidth={false} className='flex-row'>
                         <MDBNavbarItem>
                             <MDBNavbarLink

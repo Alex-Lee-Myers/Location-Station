@@ -57,7 +57,6 @@ let showToggleWeather = true;
 if (currentWeather.temp !== 0) {
     showToggleWeather = false;
 }
-
 const [showShow, setShowShow] = useState(false);
 const toggleShow = () => setShowShow(!showShow);
 
@@ -97,7 +96,6 @@ return (
     </MDBRow>
 
         <br />
-
         <MDBCol size="12">
         <MDBCollapse show={showShow}>
         <MDBListGroup style={{ 
@@ -119,7 +117,6 @@ return (
                 </MDBListGroup>
             </MDBCollapse>
         </MDBCol>
-
     </MDBContainer>
 );
 };

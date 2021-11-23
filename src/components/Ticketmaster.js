@@ -26,6 +26,7 @@ const Ticket = (props) => {
     const toggleShow = () => setShowShow(!showShow);
 
     return (
+
         <MDBContainer className='ticketMaster'>
             <MDBRow>
             <MDBCol size='12'>
@@ -51,8 +52,6 @@ const Ticket = (props) => {
                 </MDBCollapse>
                 </MDBCol>
             </MDBRow>
-
-            
         </MDBContainer>
     );
 }
