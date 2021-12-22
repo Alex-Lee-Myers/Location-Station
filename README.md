@@ -76,9 +76,9 @@ _____
 
    [MDBootstrap]: <https://github.com/joemccann/dillinger>
    [React]: <https://reactjs.org/>
-   [TicketMaster API]: <http://daringfireball.net>
-   [OpenWeather API]: <http://daringfireball.net/projects/markdown/>
-   [NASA API]: <https://github.com/markdown-it/markdown-it>
+   [TicketMaster API]: <https://developer.ticketmaster.com/products-and-docs/apis/getting-started/>
+   [OpenWeather API]: <https://openweathermap.org/api>
+   [NASA API]: <https://api.nasa.gov/>
    [ElevenFiftyAcademy]: <https://elevenfifty.org/>
    [Alex-Github]: <http://ace.ajax.org>
    [Alex-LinkedIn]: <http://nodejs.org>
