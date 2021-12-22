@@ -24,16 +24,13 @@ _____
 _____
 ## Tech
 _____
-Dillinger uses a number of open source projects to work properly:
+Location Station used the following technologies and resources:
 
 - [MDBootstrap] - Material Design Bootstrap used for styling.
 - [React] - Incoroporates useState and useEffect hooks.
 - [TicketMaster API] - Fetched to pull event information.
 - [NASA API] - Fetched to pull satellite image.
 - [OpenWeather API] - Fetched to bring in weather information.
-
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
 _____
 ## Developer Contributions
 _____
