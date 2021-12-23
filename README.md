@@ -83,7 +83,7 @@ _____
    [Alex-Github]: <http://ace.ajax.org>
    [Alex-LinkedIn]: <http://nodejs.org>
    [Alex-Portfolio]: <http://twitter.github.com/bootstrap/>
-   [Heroku]: <http://expressjs.com>
+   [Heroku]: <https://locationstation.herokuapp.com/>
    [AngularJS]: <http://angularjs.org>
    [Gulp]: <http://gulpjs.com>
 
